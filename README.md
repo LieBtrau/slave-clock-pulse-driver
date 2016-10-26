@@ -1,11 +1,22 @@
 # slave-clock-pulse-driver
 Hardware and firmware to make slave clocks run autonomously
 
-
 In public offices and vessels slave clocks are used for timekeeping.  These clocks needs impulses from a master clock to advance.  To make a slave clock run autonomously, a pulse driver is needed.  That is exactly what the hardware in this project will be doing.
 
 ![MCS-973C1 slave clock](http://mrckorea.com/data/image/MCS_973C1.gif)  
 A [MCS-973C1](http://mrckorea.com/element_desc.php?tar=80) slave clock from Marine Radio Co., Ltd. Korea will equipped with the pulse driver.
+
+## Clock characteristics
+* 24VDC, but works down to 10VDC
+* Hour-minute hands
+ * Black/white wire : for advancing the hands
+ * Black/red wire : for reversing the motion of the hands
+ * 2KOhm internal coils
+* Second hand
+ * Yellow/orange wire
+ * 2KOhm internal coil
+ * 120 polarized pulses per revolution (60 positive pulses each time followed by a negative pulse)
+ * 50ms pulse width at 10VDC
 
 # Requirements
 * A solution so that the slave driver runs autonomously, both the second and the hour/minute clockhand work to show the correct time.
