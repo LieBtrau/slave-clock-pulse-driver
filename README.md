@@ -15,8 +15,8 @@ A [MCS-973C1](http://mrckorea.com/element_desc.php?tar=80) slave clock from Mari
 * Second hand
  * Yellow/orange wire
  * 2KOhm internal coil
- * 120 polarized pulses per revolution (60 positive pulses each time followed by a negative pulse)
- * 50ms pulse width at 10VDC
+ * 120 polarized pulses per revolution (60 positive/negative pulse pairs)
+ * 45ms pulsewidth needed at 10VDC
 
 # Requirements
 * A solution so that the slave driver runs autonomously, both the second and the hour/minute clockhand work to show the correct time.
