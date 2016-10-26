@@ -94,7 +94,7 @@ AVRDUDE_PORT = usb
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 #AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
 #http://www.engbedded.com/fusecalc
-#AVRDUDE_WRITE_FUSES =  -U lfuse:w:0x26:m -U hfuse:w:0xdf:m
+#AVRDUDE_WRITE_FUSES =  -U lfuse:w:0x06:m -U hfuse:w:0xdf:m
 
 # Uncomment the following if you want avrdude's erase cycle counter.
 # Note that this counter needs to be initialized first using -Yn,

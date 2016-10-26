@@ -1,8 +1,14 @@
 *.b#?
 *.CFG
 *.csv
+*.eep
+*.elf
+*.hex
 *.l#?
 *.lbr
+*.lst
+*.map
+*.o
 *.pdf
 *.s#?
 *.scr
