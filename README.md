@@ -7,11 +7,12 @@ In public offices and vessels slave clocks are used for timekeeping.  These cloc
 A [MCS-973C1](http://mrckorea.com/element_desc.php?tar=80) slave clock from Marine Radio Co., Ltd. Korea will equipped with the pulse driver.
 
 ## Clock characteristics
-* 24VDC, but works down to 10VDC
+* 24VDC, but works down to 20VDC
 * Hour-minute hands
  * Black/white wire : for advancing the hands
  * Black/red wire : for reversing the motion of the hands
  * 2KOhm internal coils
+ * 100ms pulsewidth needed at 24VDC
 * Second hand
  * Yellow/orange wire
  * 2KOhm internal coil
