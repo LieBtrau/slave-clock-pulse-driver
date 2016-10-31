@@ -56,9 +56,11 @@ The ATTiny-A family has been chosen.  These ICs have recently been optimized for
 * Total: 10mW -> 316KJ/year = 87.7Wh/year
 
 ## Power source
-* 12x AA-alkaline: 2.8Ah -> 42Ah -> 6 months
-* AA-alkaline batteries are the best solution on the market when looking at the energy/cost ratio.  They're available in every retail store (even in packs of 12).  Be careful though, there can be a factor six(!) difference in energy content between the weakest and the strongest battery.  Putting 12 1.5V in series yields 18V, which drops down to 12V when the cells are nearly discharged. 
-* As battery technology, alkaline is chosen.  This is cheap and has a limited self discharge.  Alkaline is ideally suited for long life small current draw applications.
+### Alkaline
+* 12x AA-alkaline: 2.0Ah -> 24Ah 
+* AA-alkaline batteries are the cheapest solution on the market when looking at the energy/cost ratio.  They're available in every retail store (for €0.5 to €1 per cell).  Be careful though, there can be a factor six(!) difference in energy content between the weakest and the strongest battery.  Putting 12 times 1.5V in series yields 18V, which drops down to 12V when the cells are nearly discharged. 
+### Lithium Polymer
+
 
 ## MCU Voltage regulator
 * The H-bridge are directly fed by the batteries.  This voltage is too high for the MCU.  It needs to be converted down to something in the range of 1.8 to 5.5V.  3.3V has been chosen as MCU power supply.  
