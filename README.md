@@ -28,4 +28,5 @@ An [MCS-973C1](http://mrckorea.com/element_desc.php?tar=80) slave clock from Mar
 * Maximum 5 minutes per year devation from correct time (no automatic daylight savings time adjustment).
 * Maximum €10 COGS (batteries excl.)
 
-More info can be found on the [Wiki](Home).
+# Reading on...
+More info can be found on the [Wiki](../../wiki).
