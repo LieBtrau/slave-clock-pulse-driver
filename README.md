@@ -23,8 +23,8 @@ An [MCS-973C1](http://mrckorea.com/element_desc.php?tar=80) slave clock from Mar
 
 # Requirements
 * A solution so that the slave driver runs autonomously, both the second and the hour/minute clockhand work to show the correct time.
-* Must run at least one year on its own power. (No external wiring)
+* Must run at least six months on its own power. (No external wiring)  Every six months the clock needs to be adjusted for daylight savings time.  The batteries could then be replaced or recharged.
 * Must fit in the clock housing.
 * Maximum 5 minutes per year devation from correct time (no automatic daylight savings time adjustment).
-* Maximum €10 COGS 
+* Maximum €10 COGS (batteries excl.)
 
