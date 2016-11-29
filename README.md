@@ -12,7 +12,7 @@ An [MCS-973C1](http://mrckorea.com/element_desc.php?tar=80) slave clock from Mar
  * Black/white wire : for advancing the hands
  * Black/red wire : for reversing the motion of the hands
  * 2KOhm internal coils
- * 150ms pulsewidth needed at 20VDC
+ * 200ms pulsewidth needed at 28VDC
 * Second hand
  * 24VDC in datasheet, but works down to 10VDC
  * Yellow/orange wire
@@ -23,10 +23,13 @@ An [MCS-973C1](http://mrckorea.com/element_desc.php?tar=80) slave clock from Mar
 
 # Requirements
 * A solution so that the slave driver runs autonomously, both the second and the hour/minute clockhand work to show the correct time.
-* Must run at least six months on its own power. (No external wiring)  Every six months the clock needs to be adjusted for daylight savings time.  The batteries could then be replaced or recharged.
+* Must run at least six months on its own power.  No external wiring is allowed.  The user will adjust the clock every six months for daylight savings time.  This could be the occasion for swapping or changing the power source.
+* It should be easy for the user to swap the power source if needed.
 * Must fit in the clock housing.
-* Maximum 5 minutes per year devation from correct time (no automatic daylight savings time adjustment).
+* Maximum 5 minutes per year devation from correct time.
+* No automatic daylight savings time adjustment is needed.
 * Maximum €10 COGS (batteries excl.)
+* Externally the clock should look as the original.  So it's not allowed to user other clock hands.
 
 # Reading on...
 More info can be found on the [Wiki](../../wiki).
