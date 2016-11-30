@@ -5,8 +5,8 @@
 # (GNU make, BSD make, SysV make)
 
 
-MCU = attiny44a
-AVRDUDE_MCU = t44
+MCU = attiny84a
+AVRDUDE_MCU = t84
 FORMAT = ihex
 TARGET = slave-driver
 SRC = slave-driver.c
@@ -93,7 +93,7 @@ AVRDUDE_PORT = usb
 
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 #AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
-#http://www.engbedded.com/fusecalc
+#http://www.engbedded.com/fusecalc (same values for ATTINY44A & ATTINY84A)
 #AVRDUDE_WRITE_FUSES =  -U lfuse:w:0x06:m -U hfuse:w:0xdf:m
 
 # Uncomment the following if you want avrdude's erase cycle counter.
@@ -110,7 +110,7 @@ AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 # to submit bug reports.
 #AVRDUDE_VERBOSE = -v -v
 
-MY_CLOCK_IS_SLOW = -B 1000
+# MY_CLOCK_IS_SLOW = -B 1000
 
 AVRDUDE_BASIC = -p $(AVRDUDE_MCU) -c $(AVRDUDE_PROGRAMMER) -P $(AVRDUDE_PORT)
 AVRDUDE_FLAGS = $(MY_CLOCK_IS_SLOW) $(AVRDUDE_BASIC) $(AVRDUDE_NO_VERIFY) $(AVRDUDE_VERBOSE) $(AVRDUDE_ERASE_COUNTER) $(AVRDUDE_WRITE_FUSES)
