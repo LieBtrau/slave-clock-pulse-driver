@@ -33,8 +33,7 @@ void setup(void)
     OCR0A = 31;                         // 2Hz interrupt frequency
     TCCR0A |= _BV(WGM01);               // CTC mode;
     TCCR0B |= _BV(CS01) | _BV(CS00);    // f(clkio)/64
-    //Debug
-    //    TIMSK0 |= _BV(OCIE0A);              // enable interrupt on timer overflow
+    TIMSK0 |= _BV(OCIE0A);              // enable interrupt on timer overflow
     DDRA|= _BV(DDA7)|_BV(DDA3)|_BV(DDA2)|_BV(DDA1)|_BV(DDA0); //Set coil control pins as outputs
     ulPulseCounter=0;
     minuteCounter=0;
@@ -43,22 +42,6 @@ void setup(void)
 
 void loop(void)
 {
-    //Debug: fine tuning clock pulse lengths
-    uint8_t Coil=_BV(PORTA7);
-    bMinutePhase=!bMinutePhase;
-    bSecondPhase=!bSecondPhase;
-    Coil |= bMinutePhase ? _BV(PORTA0) : _BV(PORTA1);
-    Coil |= bSecondPhase ? _BV(PORTA2) : _BV(PORTA3);
-
-    //Generate the pulse
-    PORTA |= Coil;
-    _delay_loop_2(100);
-    //stop second pulse
-    PORTA &= ~(_BV(PORTA2) | _BV(PORTA3));
-    _delay_loop_2(100);
-    //Stop minute pulse also
-    PORTA &= ~Coil;
-    _delay_loop_2(500);
 }
 
 int main(void)
@@ -91,18 +74,18 @@ ISR(TIM0_COMPA_vect)
             Coil |= _BV(PORTA7);//enable power to clock driver
             Coil |= bMinutePhase ? _BV(PORTA0) : _BV(PORTA1);
         }
-    }
 
-    //Generate the pulse
-    PORTA |= Coil;
-    _delay_loop_2(100);
-    //stop second pulse
-    PORTA &= ~(_BV(PORTA2) | _BV(PORTA3));
+        //Generate both pulses
+        PORTA |= Coil;
+        _delay_loop_2(100);
+        //stop second pulse
+        PORTA &= ~(_BV(PORTA2) | _BV(PORTA3));
 
-    if(Coil && (_BV(PORTA0) | _BV(PORTA1)))
-    {
-        _delay_loop_2(70);
-        //Stop minute pulse also
-        PORTA &= ~Coil;
+        if(Coil && (_BV(PORTA0) | _BV(PORTA1)))
+        {
+            _delay_loop_2(100);
+            //Stop minute pulse
+            PORTA &= ~Coil;
+        }
     }
 }
