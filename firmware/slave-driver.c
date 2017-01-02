@@ -19,9 +19,9 @@
  *              => N = f1 / (f2-f1) = 4096 / (4096.0819 - 4096) = 50012 (approx)
  *
  */
-unsigned long ulPulseCounter;
+//unsigned long ulPulseCounter;
 uint8_t minuteCounter;
-const unsigned long SKIP_PULSE=50012;      //skip a pulse after every x pulses.
+//const unsigned long SKIP_PULSE=50012;      //skip a pulse after every x pulses.
 bool bSecondPhase=false;
 bool bMinutePhase=false;
 
@@ -35,7 +35,7 @@ void setup(void)
     TCCR0B |= _BV(CS01) | _BV(CS00);    // f(clkio)/64
     TIMSK0 |= _BV(OCIE0A);              // enable interrupt on timer overflow
     DDRA|= _BV(DDA7)|_BV(DDA3)|_BV(DDA2)|_BV(DDA1)|_BV(DDA0); //Set coil control pins as outputs
-    ulPulseCounter=0;
+//    ulPulseCounter=0;
     minuteCounter=0;
     sei();
 }
@@ -57,11 +57,11 @@ int main(void)
 ISR(TIM0_COMPA_vect)
 {
     uint8_t Coil=0;
-    if(ulPulseCounter++==SKIP_PULSE)
-    {
-        ulPulseCounter=0;
-    }else
-    {
+//    if(ulPulseCounter++==SKIP_PULSE)
+//    {
+//        ulPulseCounter=0;
+//    }else
+//    {
         //Set up second hand
         bSecondPhase=!bSecondPhase;
         Coil |= bSecondPhase ? _BV(PORTA2) : _BV(PORTA3);
@@ -87,5 +87,5 @@ ISR(TIM0_COMPA_vect)
             //Stop minute pulse
             PORTA &= ~Coil;
         }
-    }
+//    }
 }
